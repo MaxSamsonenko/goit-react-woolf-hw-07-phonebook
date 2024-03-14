@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contactsSlice';
+import { deleteContact } from '../../redux/operations';
 import {
   Li,
   NameWrap,
@@ -8,7 +8,7 @@ import {
   DeleteBtn,
 } from './ContactList.styled';
 
-export const ContactListItem = ({ name, number, id }) => {
+export const ContactListItem = ({ name, phone, id }) => {
   const dispatch = useDispatch();
 
   const handleDeleteBtn = () => {
@@ -21,7 +21,7 @@ export const ContactListItem = ({ name, number, id }) => {
         <p>{name}</p>
       </NameWrap>
       <NumberWrap>
-        <p>{number}</p>
+        <p>{phone}</p>
       </NumberWrap>
       <BtnWrap>
         <DeleteBtn type="button" onClick={handleDeleteBtn}>
